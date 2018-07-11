@@ -1,5 +1,4 @@
-# iterating-by_rows.property
-# -*- coding: utf-8 -*-
+#iterating_by_columns.py
 
 from openpyxl import Workbook
 
@@ -18,9 +17,9 @@ rows = (
 for row in rows:
     sheet.append(row)
 
-for row in sheet.iter_rows(min_row=1, min_col=1, max_row=6, max_col=3):
+for row in sheet.iter_cols(min_row=1, min_col=1, max_row=6, max_col=3):
     for cell in row:
-        print cell.value, # python2에선 print(~, end=" ") 대신 ,로 사용(줄바꿈 제거)
+        print cell.value,
     print ''
 
-book.save('iterbyrows.xlsx')
+book.save('iterbycols.xlsx')
